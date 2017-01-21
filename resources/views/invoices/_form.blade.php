@@ -15,7 +15,7 @@
 
 <div class="form-group">
 	{!! Form::label('currency', 'Currency:') !!}
-	{!! Form::number('currency', null, ['class' => 'form-control']) !!}
+	{!! Form::select('currency', $currencies,  null, ['id' => 'currency', 'class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">

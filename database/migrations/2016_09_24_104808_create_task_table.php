@@ -19,14 +19,14 @@ class CreateTaskTable extends Migration
 
             $table->increments('id');
             $table->string('task_number')->nullable();
-            $table->double('project_cost')->nullable();
-            $table->double('actual_cost')->nullable();
-            $table->double('number_of_units')->nullable();
-            $table->double('unit_cost')->nullable();
-            $table->string('unit')->nullable();
+            $table->text('description')->nullable();
+            $table->double('cost')->nullable();
             $table->integer('invoice_id')->unsigned()->nullable();
             $table->foreign('invoice_id')->references('id')->on('invoices'); 
-            $table->date('booked_month');
+            $table->date('operating_month');
+            $table->date('booked_month')->nullable();
+            $table->integer('owned_by')->unsigned();
+            $table->foreign('owned_by')->references('id')->on('users');
             $table->integer('created_by')->unsigned();
             $table->foreign('created_by')->references('id')->on('users');
             $table->integer('last_update_by')->unsigned();

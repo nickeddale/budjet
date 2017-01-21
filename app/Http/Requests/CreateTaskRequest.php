@@ -24,7 +24,9 @@ class CreateTaskRequest extends FormRequest
     public function rules()
     {
         return [
-            'tag_list' => 'required'
+            'tag_list' => 'required',
+            'owned_by' => 'required',
+            'operating_month' => 'required'
         ];
     }
 }

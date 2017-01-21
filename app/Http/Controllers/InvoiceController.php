@@ -12,6 +12,8 @@ use App\Tag;
 
 use App\Category;
 
+use App\Currency;
+
 use App\Http\Requests\CreateInvoiceRequest;
 
 use Illuminate\Support\Facades\Auth;
@@ -51,7 +53,9 @@ class InvoiceController extends Controller
 
         $invoice = new Invoice;
 
-        return View('invoices.create', compact('invoice', 'tagCategories'));
+        $currencies = Currency::pluck('currency_code', 'id');
+
+        return View('invoices.create', compact('invoice', 'tagCategories', 'currencies'));
     }
 
     /**
@@ -87,11 +91,14 @@ class InvoiceController extends Controller
      */
     public function edit($id)
     {
-        $tags = Tag::pluck('name', 'id');
 
+        $tagCategories = Category::with('tags')->get();
+
+        $currencies = Currency::pluck('currency_code', 'id');
+        
         $invoice = Invoice::findOrFail($id);
 
-        return View('invoices.edit', compact('invoice', 'tags') );    
+        return View('invoices.edit', compact('invoice', 'tagCategories', 'currencies') );    
     }
 
     /**
@@ -170,7 +177,7 @@ class InvoiceController extends Controller
     
     private function createInvoice(Request $request)
     {
-        $filePath = $request->file('invoice_file')->store('invoices');
+        $filePath = $request->file('invoice_file')->store('public/invoices');
 
         $invoice = $request->all();
 

@@ -4,29 +4,15 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('project_cost', 'Projected Cost:') !!}
-	{!! Form::number('project_cost', null, ['class' => 'form-control']) !!}
+	{!! Form::label('description', 'Description of this task') !!}
+	{!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 	
 <div class="form-group">
-	{!! Form::label('actual_cost', 'Actual Cost:') !!}
-	{!! Form::number('actual_cost', null, ['class' => 'form-control']) !!}
+	{!! Form::label('cost', 'Project Cost:') !!}
+	{!! Form::number('cost', null, ['class' => 'form-control']) !!}
 </div>
 	
-<div class="form-group">
-	{!! Form::label('number_of_units', 'Number of Units:') !!}
-	{!! Form::number('number_of_units', null, ['class' => 'form-control']) !!}
-</div>
-	
-<div class="form-group">
-	{!! Form::label('unit_cost', 'Unit Cost:') !!}
-	{!! Form::number('unit_cost', null, ['class' => 'form-control']) !!}
-</div>
-	
-<div class="form-group">
-	{!! Form::label('unit', 'Unit:') !!}
-	{!! Form::text('unit', null, ['class' => 'form-control']) !!}
-</div>
 
 <div class="form-group">
 	{!! Form::label('invoice_id', 'Invoice:') !!}
@@ -34,8 +20,16 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('booked_month', 'What date did the work start?:') !!}
-	{!! Form::date('booked_month', \Carbon\Carbon::now(), ['class' => 'form-control'] ); !!}
+	{!! Form::label('operating_month', 'What date did the work start?:') !!}
+	{!! Form::date('operating_month', \Carbon\Carbon::now(), ['class' => 'form-control'] ); !!}
+</div>
+
+
+{{-- need form input for owner - another user should be able to assign an owner --}}
+
+<div class="form-group">
+	{!! Form::label('owned_by', 'Who is responsible for this task?:') !!}
+	{!! Form::select('owned_by', $users, null, ['id' => 'user', 'class' => 'form-control'] ); !!}
 </div>
 
 

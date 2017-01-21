@@ -8,13 +8,12 @@ class Task extends Model
 {
     protected $fillable = [
     	"task_number",
-    	"project_cost",
-    	"actual_cost",
-    	"number_of_units",
-    	"unit_cost",
-    	"unit",
+        "description",
+        "cost",
         "invoice_id",
+        "operating_month",
         "booked_month",
+        "owned_by",
         "created_by",
         "last_update_by"
 

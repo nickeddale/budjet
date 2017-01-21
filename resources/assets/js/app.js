@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
-import GraphChild from './components/GraphChild';
+import GraphChild from './components/GraphChild.vue';
 
 
 Vue.use(VueResource);

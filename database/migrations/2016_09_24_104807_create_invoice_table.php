@@ -19,7 +19,6 @@ class CreateInvoiceTable extends Migration
             $table->string('invoice_number');
             $table->string('invoice_description');
             $table->float('cost');
-            $table->string('currency');
             $table->string('invoice_file');
             $table->date('date_recieved');
             $table->date('date_approved')->nullable();

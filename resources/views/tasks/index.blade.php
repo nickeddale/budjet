@@ -10,14 +10,12 @@
 		<tr>
 
 			<th>Task Number</th>
-			<th>Projected Cost</th>
-			<th>Actual Cost</th>
-			<th>Unit</th>
-			<th>Number of Units</th>
-			<th>Unit Cost</th>
+			<th>Task Description</th>
+			<th>Cost</th>
 			<th>Invoice</th>
 			<th>Tags</th>
-			<th>Month Booked</th>
+			<th>Operating Month</th>
+			<th>Booked Month</th>
 			<th>Created By</th>
 			<th>Created On</th>
 			<th>Last Updated By</th>
@@ -34,11 +32,8 @@
 			<tr>
 			
 				<td>{{ $task->task_number }} </td>
-				<td>{{ $task->project_cost }} </td>
-				<td>{{ $task->actual_cost }} </td>
-				<td>{{ $task->unit }} </td>
-				<td>{{ $task->number_of_units }} </td>
-				<td>{{ $task->unit_cost }} </td>
+				<td>{{ $task->description }} </td>
+				<td>{{ $task->cost }} </td>
 				<td>
 					@unless( is_null($task->invoices))
 						<a href="{{ route('invoices.show', ['id' => $task->invoice_id ]) }}">
@@ -51,6 +46,7 @@
 				<td>
 					@include('tags._label', $tags = $task->tags)
 				</td>
+				<td>{{ $task->operating_month }} </td>
 				<td>{{ $task->booked_month }} </td>
 				<td>{{ $task->createdBy->name }} </td>
 				<td>{{ $task->created_at }} </td>

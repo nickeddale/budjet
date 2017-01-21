@@ -1,6 +1,6 @@
 <li class="dropdown">
     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-        Tasks <span class="caret"></span>
+        Tasks
     </a>
 
     <ul class="dropdown-menu" role="menu">

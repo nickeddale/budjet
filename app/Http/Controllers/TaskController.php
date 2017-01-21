@@ -14,6 +14,8 @@ use App\Tag;
 
 use App\Category;
 
+use App\User; 
+
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests\CreateTaskRequest;
@@ -52,9 +54,11 @@ class TaskController extends Controller
 
         $invoices = Invoice::pluck('invoice_number', 'id');
 
+        $users = User::pluck('name', 'id'); 
+
         $task = new Task;
 
-        return View('tasks.create', compact('task', 'tagCategories', 'invoices'));
+        return View('tasks.create', compact('task', 'tagCategories', 'invoices', 'users'));
     }
 
     /**
@@ -93,9 +97,11 @@ class TaskController extends Controller
 
         $invoices = Invoice::pluck('invoice_number', 'id');
 
-        $task = Task::findOrFail($id);
+        $users = User::pluck('name', 'id'); 
 
-        return View('tasks.edit', compact('task', 'tagCategories', 'invoices') );
+        $task = Task::findOrFail($id);    
+
+        return View('tasks.edit', compact('task', 'tagCategories', 'invoices', 'users') );
         
     }
 
