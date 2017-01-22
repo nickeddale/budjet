@@ -10,6 +10,7 @@ Vue.use(VueResource);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+//not to be confused with the twitter bootstrap js file
 require('./bootstrap');
 
 /**
@@ -17,7 +18,6 @@ require('./bootstrap');
  * the body of the page. From here, you may begin adding components to
  * the application, or feel free to tweak this setup for your needs.
  */
-
 
 const app = new Vue({
 

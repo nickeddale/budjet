@@ -179,9 +179,11 @@ class InvoiceController extends Controller
     {
         $filePath = $request->file('invoice_file')->store('public/invoices');
 
+        $fileName = str_replace('public/invoices/', '', $filePath);
+
         $invoice = $request->all();
 
-        $invoice['invoice_file'] = $filePath;
+        $invoice['invoice_file'] = $fileName;
         $invoice['uploaded_by'] = Auth::user()->id;
         $invoice['last_update_by'] = Auth::user()->id;
 

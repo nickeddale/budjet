@@ -44426,6 +44426,7 @@ _vue2.default.use(_vueResource2.default);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+//not to be confused with the twitter bootstrap js file
 require('./bootstrap');
 
 /**

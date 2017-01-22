@@ -13,17 +13,31 @@ require('laravel-elixir-vueify');
  |
  */
 
+// using this for js only atm, styles from npm pulled in from app.scss
+var paths = {
+    'bootstrapTable': './node_modules/bootstrap-table/'
+}
+
 
 elixir(mix => {
 
 
-    mix.styles([
-    	'libs/select2.css',
-    	'app.css',
-    ], 'public/css/app.css');   
-
+    //combine stylesheets
+    //any sass or scss should be directed from app.scss
+    //any additional css can be added manually after ./public/css/app.css
+    mix.sass('app.scss')
+      .styles([
+         './public/css/app.css',
+         'libs/select2.css'
+      ])
+      .version('public/css/all.css');
+    
     mix.scripts([
-    	'libs/select2.js',
+      'libs/tableExport.js',
+      paths.bootstrapTable + 'src/bootstrap-table.js',
+      paths.bootstrapTable + 'src/extensions/export/bootstrap-table-export.js',
+      paths.bootstrapTable + 'src/extensions/filter-control/bootstrap-table-filter-control.js',
+    	'libs/select2.js'
     ], 'public/js/app-libs.js');
 
     mix.browserify([

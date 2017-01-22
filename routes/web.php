@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('files/{file}/preview', ['as' => 'file_preview', 'uses' => 'FilesController@preview']);
 Route::resource('tasks', 'TaskController');
 Route::resource('invoices', 'InvoiceController');
 Route::get('invoices/{invoice}/download', 'InvoiceController@download')->name('invoices.download');
@@ -26,3 +26,6 @@ Route::resource('reports', 'ReportController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+
