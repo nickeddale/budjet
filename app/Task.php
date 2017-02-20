@@ -58,6 +58,15 @@ class Task extends Model
         return $this->belongsTo('App\User', 'last_update_by');
     }
 
+    /**
+     * a task is owned by a user
+     * @return Eloquent belongsTo App\User
+     */
+    public function ownedBy()
+    {
+        return $this->belongsTo('App\User', 'owned_by');
+    }
+
 
 
 

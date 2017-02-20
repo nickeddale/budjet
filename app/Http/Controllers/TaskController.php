@@ -37,7 +37,7 @@ class TaskController extends Controller
     public function index()
     {
 
-        $tasks = Task::with('createdBy', 'lastUpdateBy', 'invoices', 'tags.categories')->get();
+        $tasks = Task::with( 'ownedBy', 'createdBy', 'lastUpdateBy', 'invoices', 'tags.categories')->get();
 
         return View('tasks.index', compact('tasks') );
     }
