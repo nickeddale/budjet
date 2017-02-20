@@ -19,6 +19,13 @@ class Task extends Model
 
     ];
 
+    protected $with = [
+        'createdBy',
+        'ownedBy',
+        'lastUpdateBy',
+        'tags'
+    ];
+
     /**
      * A task has one invoice
      * get the invoice associated with the task

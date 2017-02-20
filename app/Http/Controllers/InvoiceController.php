@@ -79,7 +79,7 @@ class InvoiceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Invoice $invoice)
-    {
+    {        
         return View('invoices.show', compact('invoice'));
     }
 

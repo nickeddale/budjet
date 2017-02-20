@@ -48,7 +48,12 @@
 				<td>{{ $invoice->lastUpdateBy->name}}</td>
 				<td>{{ $invoice->updated_at}}</td>
 				<td><a href="{{ route('invoices.show', ['id' => $invoice->id]) }}">View Invoice</a> </td>
-				<td><a href="{{ route('invoices.edit', ['id' => $invoice->id]) }}">Edit Invoice</a> </td>
+				<td>
+					<a href="{{ route('invoices.edit', ['id' => $invoice->id]) }}"
+						class="btn-floating btn-small  amber accent-4">
+						<i class="large material-icons">mode_edit</i>
+					</a>
+				</td>
 				<td>  @include('invoices/_delete') </td>
 
 

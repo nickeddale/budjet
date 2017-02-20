@@ -11,12 +11,13 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Material Design fonts -->
-     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+{{--      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
-
+ --}}
  
     {{-- bootstrap --}}
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 
 
     {{-- jquery --}}
@@ -25,6 +26,15 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+    {{-- materialize --}}
+    {{-- material design bootstrap theme --}}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          
 
     <!-- Styles -->
     <link href="/css/all.css" rel="stylesheet">
@@ -44,7 +54,7 @@
 </head>
 <body>
         
-        @include('layouts.nav')
+        @include('layouts.nav-material')
 
         <div class="container">
 

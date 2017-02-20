@@ -19,6 +19,15 @@ class Invoice extends Model
     ];
 
 
+    // eager load models by default 
+    // relationships defined below
+    protected $with = 
+    [
+        'uploadedBy',
+        'lastUpdateBy'
+    ];
+
+
     /**
      * a invoice has many tasks
      * get the tasks associated with the invoice
